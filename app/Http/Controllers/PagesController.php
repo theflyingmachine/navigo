@@ -37,6 +37,28 @@ public function login(Request $request){
     return view('pages.login');
 }
 
+//new customer
+public function newcust(Request $request){
+    if($request->session()->get('login'))
+    return view('pages.newcust');
+    else
+    return view('pages.login');
+}
+
+
+//Reports
+public function reports(Request $request){
+    if($request->session()->get('login'))
+    return view('pages.reports');
+    else
+    return view('pages.login');
+}
+
+//404
+public function err_404(Request $request){
+    return view('inc.404');
+}
+
 //logout
     public function logout(Request $request){
         $request->session()->put('loginalert',false);

@@ -87,7 +87,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 </style></head><body>
    
 <div class="login">
-        <center><h1><font color="white">Broadcast Center</font></h1></center>
+        <center><h1><font color="white">Navigo</font></h1></center>
 	{{-- <h3>Login</h3> --}}
     <form method="post">
         {{-- <input type="text" name="u" placeholder="Username" required="required" /> --}}

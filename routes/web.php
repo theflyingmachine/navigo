@@ -17,6 +17,14 @@ Route::post('/', 'PagesController@index');
 Route::post('/index', 'PagesController@index');
 
 Route::get('/about', 'PagesController@about');
+Route::get('/newcust', 'PagesController@newcust');
+Route::get('/reports', 'PagesController@reports');
 Route::get('/logout', 'PagesController@logout');
 Route::post('/login', 'PagesController@login');
 Route::get('/login', 'PagesController@login');
+
+Route::get('/404', 'PagesController@err_404');
+
+
+//redirect all invalid route to 404
+Route::any('{all}', 'PagesController@err_404')->where('all', '.*');
