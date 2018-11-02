@@ -50,9 +50,12 @@
             @if(session()->has('login'))
             @include('inc.navbar')
             @endif
-        <br><br><br><br>
+        <br>
             <div class="container">
                 @yield('content')
             </div>
+            @if(session()->has('login'))
+            @include('inc.footer')
+            @endif
     </body>
 </html>
