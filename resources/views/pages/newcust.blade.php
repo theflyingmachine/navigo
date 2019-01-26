@@ -11,7 +11,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Contact</label>
-        <input type="number" class="form-control" name="inputContact4" id="inputContact4" placeholder="Contact" required>
+        <input type="text" class="form-control" name="inputContact4" id="inputContact4" placeholder="Contact" required>
       </div>
     </div>
     {{-- Address --}}
@@ -66,7 +66,7 @@
           </div>
           <div class="form-group col-md-2">
                 <label for="inputQuantity">Quantity</label>
-                <input type="number" class="form-control" name="inputQuantity" id="inputQuantity" placeholder="Enter in Liters" required>
+                <input type="text" class="form-control" name="inputQuantity" id="inputQuantity" placeholder="Enter in Liters" required>
               </div>
          </div>
             
