@@ -23,11 +23,11 @@
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Latitude</label>
-          <input type="number" class="form-control" name="inputlat4" id="inputlat4" value="12.972442" placeholder="Latitude" required>
+          <input type="text" class="form-control" name="inputlat4" id="inputlat4" value="12.972442" placeholder="Latitude" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Longitude</label>
-          <input type="number" class="form-control" name="inputlong4" id="inputlong4" value="77.580643" placeholder="Longitude" required>
+          <input type="text" class="form-control" name="inputlong4" id="inputlong4" value="77.580643" placeholder="Longitude" required>
         </div>
       </div>
     {{-- <div class="form-group">
