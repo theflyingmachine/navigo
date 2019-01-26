@@ -21,12 +21,15 @@ Route::post('/index', 'PagesController@index');
 
 Route::get('/about', 'PagesController@about');
 Route::get('/newcust', 'PagesController@newcust');
+Route::get('/managecust', 'PagesController@managecust');
 Route::get('/reports', 'PagesController@reports');
 Route::get('/logout', 'PagesController@logout');
 Route::post('/login', 'PagesController@login');
 Route::get('/login', 'PagesController@login');
 
 Route::get('/newagent', 'PagesController@newagent');
+Route::get('/manageagent', 'PagesController@manageagent');
+Route::post('/manageagent', 'PagesController@manageagentstatus');
 Route::post('/newagent', 'PagesController@newagentadded');
 
 

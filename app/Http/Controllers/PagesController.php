@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Agent;
+use App\Customer;
 use Session;
 
 class PagesController extends Controller
@@ -102,6 +103,56 @@ public function err_404(Request $request){
 
        
     return view('pages.newagent');
+      }else
+    return view('pages.login');
+}
+
+
+//Manage Customer
+public function managecust(Request $request){
+    if($request->session()->get('login')){
+       
+        $customer = Customer::all();
+                if ($customer==''){
+                $request->session()->flash('alert-warning', 'You do not have any Agent!');
+                }
+    return view('pages.managecust', ['customers' => $customer]);
+      }else
+    return view('pages.login');
+}
+
+
+//Manage Agent
+public function manageagent(Request $request){
+    if($request->session()->get('login')){
+            $agent = Agent::select('*')
+            ->join('area', 'agent.a_id', '=', 'area.a_id')
+            ->select('agent.a_id','agent.name', 'agent.contact','agent.email','agent.accountstatus','area.area_code')
+            ->get();
+
+                if ($agent==''){
+                $request->session()->flash('alert-warning', 'You do not have any Agent!');
+                }
+    return view('pages.manageagent', ['agents' => $agent]);
+      }else
+    return view('pages.login');
+}
+
+//Manage Agent update
+public function manageagentstatus(Request $request){
+    if($request->session()->get('login')){
+         
+        $a_id = $request->input('a_id');
+        $task = $request->input('task');
+        
+        $UpdateDetails= Agent::where('a_id', $a_id)->firstOrFail();
+        $UpdateDetails->accountstatus = $task;
+        $UpdateDetails->updated_at = now();
+        $UpdateDetails->save();
+            
+
+               
+    return redirect('/manageagent');
       }else
     return view('pages.login');
 }
