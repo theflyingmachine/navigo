@@ -22,7 +22,7 @@ class CreateCustomerTable extends Migration
             $table->string('area_code');
             $table->string('address');
             $table->string('quantity');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->string('homeimage');
             $table->string('accountstatus');
             $table->timestamps();
