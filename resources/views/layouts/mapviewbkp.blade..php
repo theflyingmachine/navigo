@@ -4,18 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-<meta charset=utf-8 />
-<!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<style>
-    article, aside, figure, footer, header, hgroup, 
-    menu, nav, section { display: block; }
-  </style>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
 
         {{-- For CSRF protection --}}
@@ -69,17 +57,6 @@
                 border-bottom: 1px solid #00c851;
                 -webkit-box-shadow: 0 1px 0 0 #00c851;
                 box-shadow: 0 1px 0 0 #00c851; }
-
-
-
-                #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-
-
-
-
                 </style>
         </head>
     <body>

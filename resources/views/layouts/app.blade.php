@@ -44,6 +44,11 @@
                 border-bottom: 1px solid #00c851;
                 -webkit-box-shadow: 0 1px 0 0 #00c851;
                 box-shadow: 0 1px 0 0 #00c851; }
+
+                .custombtn {
+    width: 78px !important;
+                          }
+   
                 </style>
         </head>
     <body>

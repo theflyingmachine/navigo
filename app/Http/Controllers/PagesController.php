@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Agent;
+use Session;
 
 class PagesController extends Controller
 {
@@ -65,4 +67,50 @@ public function err_404(Request $request){
         $request->session()->flush();
         return redirect('/login');;
     }
+
+
+    //new agent page navigate
+    public function newagent(Request $request){
+    if($request->session()->get('login'))
+    return view('pages.newagent');
+    else
+    return view('pages.login');
+}
+
+
+ //new agent add
+ public function newagentadded(Request $request){
+    if($request->session()->get('login')){
+        $name = $request->input('inputName4');
+        $contact = $request->input('inputContact4');
+        $email = $request->input('inputEmail');
+        //Check if agent exists
+        $agent = Agent::where('email', $email)->first();
+                if ($agent!=''){
+                $request->session()->flash('alert-danger', 'Agent "'.$email.'" already exists!');
+                }else{
+        //Save agent in DB
+        $agent = new Agent;
+        $agent->name = $name;
+        $agent->contact = $contact;
+        $agent->email = $email;
+        $agent->accountstatus = "active";
+        $agent->save();
+         //display success
+    $request->session()->flash('alert-success', 'New agent "'.$name.'" is successfully added!');
+                }
+
+       
+    return view('pages.newagent');
+      }else
+    return view('pages.login');
+}
+
+
+
+
+    
+
+
+
 }

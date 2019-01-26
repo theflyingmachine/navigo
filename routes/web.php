@@ -11,6 +11,9 @@
 |
 */
 
+
+
+//Page Controller
 Route::get('/', 'PagesController@index');
 Route::get('/index', 'PagesController@index');
 Route::post('/', 'PagesController@index');
@@ -23,7 +26,19 @@ Route::get('/logout', 'PagesController@logout');
 Route::post('/login', 'PagesController@login');
 Route::get('/login', 'PagesController@login');
 
+Route::get('/newagent', 'PagesController@newagent');
+Route::post('/newagent', 'PagesController@newagentadded');
+
+
 Route::get('/404', 'PagesController@err_404');
+
+//Customer Controller
+Route::post('/addnewcustomer', 'CustomerController@addnewcust');
+
+
+//All API controller
+Route::post('/API/request', 'APIController@apicall');
+Route::get('/API/request', 'APIController@apicall');
 
 
 //redirect all invalid route to 404
