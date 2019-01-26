@@ -3,6 +3,15 @@
 <h1>Add New Customer </h1>
         
 <form action="/addnewcustomer" method="post" enctype="multipart/form-data">
+  {{--show message flash  --}}
+  <div class="flash-message">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+  
+        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+        @endif
+      @endforeach
+    </div> <!-- end .flash-message -->
     {{-- Name and contact --}}
     <div class="form-row">
       <div class="form-group col-md-6">

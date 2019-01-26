@@ -28,7 +28,12 @@ public function addnewcust(Request $request){
     $notes = $request->input('inputNotes');
     $area_code = $request->input('sector');
 
-
+    //check if customer exists
+    $custnmbr = Customer::where('contact', $contact)->first();
+    if ($custnmbr!=''){
+    $request->session()->flash('alert-danger', 'Customer with contact "'.$contact.'" already exists!');
+    return view('pages.newcust');
+    }else{
      //insert to database
      $customer = new Customer;
      $customer->name = $name;
@@ -45,7 +50,7 @@ public function addnewcust(Request $request){
      $customer->save();
 
      return view('pages.newcustadded');
-
+    }
 //    return view('pages.newcust');
     }else
     return view('pages.login');
