@@ -2,7 +2,7 @@
 @section('content')
 <h1>Manage Customer </h1>
         
-<form action="/addnewcustomer" method="post" enctype="multipart/form-data">
+
   {{--show message flash  --}}
   <div class="flash-message">
       @foreach (['danger', 'warning', 'success', 'info'] as $msg)
@@ -37,6 +37,9 @@
 
       <tbody>
         <tr>
+            <form action="/managecust" method="post">
+              <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+              <input type="hidden" name="c_id" id="c_id" value="{{ $customer->c_id }}" />
           <th scope="row">{{ $customer->c_id }}</th>
           <td>{{ $customer->name }}</td>
           <td>{{ $customer->contact }}</td>
@@ -45,13 +48,16 @@
           <td>{{ $customer->area_code }}</td>
           <td>{{ $customer->notes }}</td>
         
- @if ( $customer->accountstatus =="pending")
-          <td align="center"><img src="red.png" alt="Inactive" height="42" width="42"></td>
-          <td> <button type="button" class="btn btn-success">Activate</button></td>
+ @if ( $customer->accountstatus =="inactive")
+ <td><img src="red.png" alt="Inactive" height="32" width="32"></td>
+ <input type="hidden" name="task" id="task" value="active" />
+ <td> <button type="submit"  class="btn btn-success span2">Activate</button></td>
 @else
-          <td align="center"><img src="green.png" alt="Active" height="42" width="42"></td>
-          <td> <button type="button" class="btn btn-danger">Deactivate</button></td>
+ <td ><img src="green.png" alt="Active" height="32" width="32"></td>
+ <input type="hidden" name="task" id="task" value="inactive" />
+ <td> <button type="submit"   class="btn btn-danger span2">Deactivate</button></td>
 @endif
+   </form>
         </tr>
         @endforeach
       </tbody>

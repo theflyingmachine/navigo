@@ -45,7 +45,7 @@ public function addnewcust(Request $request){
      $customer->quantity = $quantity;
      $customer->notes = $notes;
      $customer->homeimage = $hashFilename;
-     $customer->accountstatus = "pending";
+     $customer->accountstatus = "active";
     
      $customer->save();
 

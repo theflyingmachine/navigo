@@ -157,6 +157,25 @@ public function manageagentstatus(Request $request){
     return view('pages.login');
 }
 
+//Manage Customer update
+public function managecuststatus(Request $request){
+    if($request->session()->get('login')){
+        // return $request;
+        $c_id = $request->input('c_id');
+        $task = $request->input('task');
+        
+        $UpdateDetails= Customer::where('c_id', $c_id)->firstOrFail();
+        $UpdateDetails->accountstatus = $task;
+        $UpdateDetails->updated_at = now();
+        $UpdateDetails->save();
+             
+
+               
+    return redirect('/managecust?step=dates');
+      }else
+    return view('pages.login');
+}
+
 
 
 

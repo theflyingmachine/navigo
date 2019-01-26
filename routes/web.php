@@ -22,6 +22,7 @@ Route::post('/index', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/newcust', 'PagesController@newcust');
 Route::get('/managecust', 'PagesController@managecust');
+Route::post('/managecust', 'PagesController@managecuststatus');
 Route::get('/reports', 'PagesController@reports');
 Route::get('/logout', 'PagesController@logout');
 Route::post('/login', 'PagesController@login');
