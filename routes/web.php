@@ -33,6 +33,10 @@ Route::get('/manageagent', 'PagesController@manageagent');
 Route::post('/manageagent', 'PagesController@manageagentstatus');
 Route::post('/newagent', 'PagesController@newagentadded');
 
+//DeliveryController
+Route::get('/deliveryjob', 'DeliveryController@opendeliveryjob');
+Route::get('/publishdeliveryjob/{key}', 'DeliveryController@publishdeliveryjob');
+
 
 Route::get('/404', 'PagesController@err_404');
 

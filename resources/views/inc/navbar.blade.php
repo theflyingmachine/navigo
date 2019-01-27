@@ -27,16 +27,16 @@
               </div>
             </li>
         
-            &nbsp; &nbsp;&nbsp; &nbsp;
+            {{-- &nbsp; &nbsp;&nbsp; &nbsp;
 
             <li class="nav-item">
                   <a class="nav-link" href="/newagent">Sector Maping <span class="sr-only">(current)</span></a>
-                </li>
+                </li> --}}
 
                 &nbsp; &nbsp;&nbsp; &nbsp;
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/newagent">Delivery Chart <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/deliveryjob">Delivery Jobs <span class="sr-only">(current)</span></a>
                   </li>
                   &nbsp; &nbsp;&nbsp; &nbsp;
                   

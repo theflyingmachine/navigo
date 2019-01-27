@@ -23,7 +23,6 @@
           <th>Name</th>
           <th>Contact</th>
           <th>Email</th>
-          <th>Sector</th>
           <th>Account Status</th>
           <th>Action</th>
         </tr>
@@ -42,7 +41,6 @@
           <td>{{ $agent->name }}</td>
           <td>{{ $agent->contact }}</td>
           <td>{{ $agent->email }}</td>
-          <td>{{ $agent->area_code }}</td>
         
 @if ( $agent->accountstatus =="inactive")
           <td><img src="red.png" alt="Inactive" height="32" width="32"></td>

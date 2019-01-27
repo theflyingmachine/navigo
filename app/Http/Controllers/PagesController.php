@@ -125,10 +125,11 @@ public function managecust(Request $request){
 //Manage Agent
 public function manageagent(Request $request){
     if($request->session()->get('login')){
-            $agent = Agent::select('*')
-            ->join('area', 'agent.a_id', '=', 'area.a_id')
-            ->select('agent.a_id','agent.name', 'agent.contact','agent.email','agent.accountstatus','area.area_code')
-            ->get();
+            // $agent = Agent::select('*')
+            // ->join('area', 'agent.a_id', '=', 'area.a_id')
+            // ->select('agent.a_id','agent.name', 'agent.contact','agent.email','agent.accountstatus','area.area_code')
+            // ->get();
+            $agent = Agent::select('*')->get();
 
                 if ($agent==''){
                 $request->session()->flash('alert-warning', 'You do not have any Agent!');
@@ -171,7 +172,7 @@ public function managecuststatus(Request $request){
              
 
                
-    return redirect('/managecust?step=dates');
+    return redirect('/managecust');
       }else
     return view('pages.login');
 }

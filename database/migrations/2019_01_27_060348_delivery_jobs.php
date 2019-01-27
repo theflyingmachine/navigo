@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAreaTable extends Migration
+class DeliveryJobs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateAreaTable extends Migration
      */
     public function up()
     {
-        Schema::create('area', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('area_code');
-            $table->string('a_id');
+        Schema::create('deliveryjob', function (Blueprint $table) {
+            $table->increments('j_id');
+            $table->string('date');
+            $table->string('c_id');
+            $table->string('a_id')->nullable();
+            $table->string('quantity');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateAreaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('area');
+         Schema::dropIfExists('deliveryjob');
     }
 }

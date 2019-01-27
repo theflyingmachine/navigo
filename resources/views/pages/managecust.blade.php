@@ -14,8 +14,13 @@
     </div> <!-- end .flash-message -->
    
     {{-- Table begins --}}
-    <!--Table-->
-<table id="tablePreview" class="table">
+    <div class="card">
+  
+        <div class="card-body">
+          <div id="table" class="table-editable">
+            <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus fa-2x"
+                  aria-hidden="true"></i></a></span>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
     <!--Table head-->
       <thead>
         <tr>
@@ -41,12 +46,12 @@
               <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
               <input type="hidden" name="c_id" id="c_id" value="{{ $customer->c_id }}" />
           <th scope="row">{{ $customer->c_id }}</th>
-          <td>{{ $customer->name }}</td>
-          <td>{{ $customer->contact }}</td>
-          <td>{{ $customer->address }}</td>
-          <td>{{ $customer->quantity }}</td>
-          <td>{{ $customer->area_code }}</td>
-          <td>{{ $customer->notes }}</td>
+          <td class="pt-3-half" contenteditable="false">{{ $customer->name }}</td>
+          <td class="pt-3-half" contenteditable="true">{{ $customer->contact }}</td>
+          <td class="pt-3-half" contenteditable="true">{{ $customer->address }}</td>
+          <td class="pt-3-half" contenteditable="true">{{ $customer->quantity }}</td>
+          <td class="pt-3-half" contenteditable="true">{{ $customer->area_code }}</td>
+          <td class="pt-3-half" contenteditable="true">{{ $customer->notes }}</td>
         
  @if ( $customer->accountstatus =="inactive")
  <td><img src="red.png" alt="Inactive" height="32" width="32"></td>
@@ -60,9 +65,10 @@
    </form>
         </tr>
         @endforeach
-      </tbody>
-      <!--Table body-->
-    </table>
-    <!--Table-->
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
 
 @endsection
